@@ -2,7 +2,6 @@ import allure
 import pytest
 import helper
 import scooter_api
-from conftest import clean_created_orders
 
 
 
@@ -10,7 +9,7 @@ class TestCreateOrder:
     @allure.title("Проверка успешного создания заказа")
     @allure.description("Создание шаблонных заказов разных цветов, проверка статуса и наличия track в ответе")
     @pytest.mark.parametrize("color", ["BLACK", "GRAY", "BLACK GRAY", ""])
-    def test_success_create_order(self, color, clean_created_orders):
+    def test_success_create_order(self, color):
         body = helper.ChangeTestDataHelper.modify_create_color_body(color)
         created_order_request = scooter_api.ScooterApi.create_order(body)
 

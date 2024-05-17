@@ -5,7 +5,7 @@ import string
 
 class ChangeTestDataHelper:
     @staticmethod
-    def modify_create_courier_body(key, value):
+    def modify_courier_body(key, value):
         body = data.TestDataCreateCourier.CREATE_COURIER_BODY.copy()
         body[key] = value
 

@@ -6,6 +6,16 @@ class TestDataCreateCourier:
         "firstName": "saske"
     }
 
+    CREATE_COURIER_BODY_WITHOUT_LOGIN = {
+        "password": "1234",
+        "firstName": "saske"
+    }
+
+    CREATE_COURIER_BODY_WITHOUT_PASSWORD = {
+        "login": "ninjc",
+        "firstName": "saske"
+    }
+
     CREATE_IDENTICAL_COURIER_BODY = {
         "login": "sandre",
         "password": "1234",
@@ -17,6 +27,11 @@ class TestDataAuthorization:
         "login": "likeariver",
         "password": "1234"
     }
+
+    AUTH_COURIER_BODY_WITHOUT_LOGIN = {
+        "password": "1234"
+    }
+
 
 class TestDataCreateOrder:
     CREATE_ORDER_BODY = {

@@ -15,6 +15,11 @@ class ScooterApi:
         return requests.post(urls.BASE_URL + urls.AUTH_ENDPOINT, json=body)
 
     @staticmethod
+    @allure.step("Отправка запроса на удаление курьера")
+    def delete_courier(courier_id):
+        return requests.delete(urls.BASE_URL + urls.DELETE_COURIER_ENDPOINT + str(courier_id))
+
+    @staticmethod
     @allure.step("Отправка запроса на создание заказа")
     def create_order(body):
         return requests.post(urls.BASE_URL + urls.CREATE_ORDER_ENDPOINT, json=body)
@@ -23,8 +28,3 @@ class ScooterApi:
     @allure.step("Отправка запроса на получение списка заказов")
     def get_list_orders():
         return requests.get(urls.BASE_URL + urls.GET_LIST_ORDERS)
-
-    @staticmethod
-    @allure.step("Отправка запроса на удаление списка заказов")
-    def delete_order_by_track(track):
-        return requests.put(urls.BASE_URL + urls.DELETE_ORDER_ENDPOINT, json={"track": track})
